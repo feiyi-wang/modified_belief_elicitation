@@ -470,7 +470,7 @@ $( document ).ready(function() {
 
                           formatter: function() { 
                           
-                          let labels = ['Worst possible', 'Very poor', 'Somewhat poor', 'Poor', 'Average', 'Good', 'Somewhat good', 'Very good', 'Best possible'];
+                          let labels = ['Worst <br>possible', 'Very <br>poor', 'Somewhat <br>poor', 'Poor', 'Average', 'Good', 'Somewhat <br>good', 'Very <br>good', 'Best <br>possible'];
                           
                           let index = this.value / step;
                           
@@ -480,7 +480,7 @@ $( document ).ready(function() {
 
 
                         style: {
-                            fontSize: '9px'
+                            fontSize: '14px'
                         },
                         y: 30,
                     },
@@ -507,7 +507,7 @@ $( document ).ready(function() {
 
                     },
                     style: {
-                        fontSize: '10px'
+                        fontSize: '14px'
                     },
                     x: -10
                 },
