@@ -539,7 +539,7 @@ $( document ).ready(function() {
 
                           formatter: function() { 
                           
-                          let labels = ['Label1', 'Label2', 'Label3', 'Label4', 'Label5'];
+                          let labels = ['Worst possible', 'Very poor', 'Somewhat poor', 'Poor', 'Average', 'Good', 'Somewhat good', 'Very good', 'Best possible'];
                           
                           let index = this.value / step;
                           
