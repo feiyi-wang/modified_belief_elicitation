@@ -389,7 +389,7 @@ $( document ).ready(function() {
             chart: {
                 renderTo: container,
                 className: 'pointChart',
-                margin: [10, 20, 60, 60],
+                margin: [10, 20, 80, 80],
                 events: {
 
 
