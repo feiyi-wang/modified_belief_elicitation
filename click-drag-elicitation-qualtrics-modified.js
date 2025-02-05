@@ -790,52 +790,5 @@ $(document).ready(function() {
 
             });
 
-function validateDistribution() {
-        // Example validation: Check if the sum of yData equals 1 (or close to 1)
-        let yData = chart.series[1].yData;
-        let sum = yData.reduce((a, b) => a + b, 0);
-
-        // Allow some tolerance for floating-point arithmetic
-        return Math.abs(sum - 1) < 0.01;
-    }
-
-    $(document).ready(function() {
-        // Add event listener for validation
-        chart.series[1].update({
-            events: {
-                afterSetExtremes: function() {
-                    if (validateDistribution()) {
-                        $('.SubmitDistribution').eq(chartindex).prop('disabled', false);
-                    } else {
-                        $('.SubmitDistribution').eq(chartindex).prop('disabled', true);
-                    }
-                }
-            }
-        });
-
-        $('.SubmitDistribution').click(function() {
-            if (!validateDistribution()) {
-                alert("Please ensure the distribution sums to 1 before submitting.");
-                return false; // Prevent submission
-            }
-
-            // Submission logic here...
-            var yData = chart.series[1].yData; // Get data from Highcharts
-            var xData = chart.series[1].xData;
-            var sum = yData.reduce((a, b) => a + b, 0); // Sum for normalization
-            var results = yData.map(v => v / sum); // Normalize
-            var XYData = xData.map(function(c, i) {
-                return [c, results[i]];
-            }); // Merge X and Y arrays
-
-            // Store the data in Qualtrics Embedded Data
-            Qualtrics.SurveyEngine.setEmbeddedData(params.DistributionResult, JSON.stringify(XYData));
-            Qualtrics.SurveyEngine.setEmbeddedData(params.DistributionYData, results.join());
-            Qualtrics.SurveyEngine.setEmbeddedData(params.DistributionXData, xData.join());
-            Qualtrics.SurveyEngine.setEmbeddedData(params.DistributionHistory, JSON.stringify(history));
-
-            $("#NextButton").click();
-        });
-    });
     }
 });
