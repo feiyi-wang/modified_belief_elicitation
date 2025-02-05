@@ -1,16 +1,10 @@
-//$( document ).ready(function() {
-    //$('.chart').each(function( index ) {
-    //chart(index, $( this ).data());
-    //$( this ).before('<div style="text-align: right;"><button  class="undo btn  btn-warning mx-1"  disabled  type="button">Undo</button><button class="reset btn  btn-danger  mx-1" disabled  type="button">Reset</button></div>');
-    //$( this ).after('<div class="mt-2" style="text-align: center;margin-left:50px"><a class="SubmitDistribution btn btn-success">Submit</a></div>');
-    //});
-$(document).ready(function() {
-    $('.chart').each(function(index) {
-    chart(index, $(this).data());
-    $(this).before('<div style="text-align: right;"><button class="undo btn btn-warning mx-1" disabled type="button">Undo</button><button class="reset btn btn-danger mx-1" disabled type="button">Reset</button></div>');
-    $(this).after('<div class="mt-2" style="text-align: center;margin-left:50px"><a class="SubmitDistribution btn btn-success" disabled>Submit the distribution</a></div>');
+$( document ).ready(function() {
+    $('.chart').each(function( index ) {
+    chart(index, $( this ).data());
+    $( this ).before('<div style="text-align: right;"><button  class="undo btn  btn-warning mx-1"  disabled  type="button">Undo</button><button class="reset btn  btn-danger  mx-1" disabled  type="button">Reset</button></div>');
+    $( this ).after('<div class="mt-2" style="text-align: center;margin-left:50px"><a class="SubmitDistribution btn btn-success">Submit</a></div>');
     });
-});
+
     function chart(chartindex, params){
 
 
